@@ -1,23 +1,15 @@
 "use client";
 
-import { Fragment, useState } from "react";
-import {
-  Dialog,
-  DialogPanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
+import { Fragment } from "react";
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import {
   ArrowDownCircleIcon,
   ArrowPathIcon,
   ArrowUpCircleIcon,
-  Bars3Icon,
   EllipsisHorizontalIcon,
   PlusSmallIcon,
 } from "@heroicons/react/20/solid";
-import { BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 const navigation = [
   { name: "Home", href: "#" },
@@ -154,13 +146,11 @@ const clients = [
   },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
     <main>
       <div className="relative isolate overflow-hidden pt-16">
@@ -181,13 +171,13 @@ export default function Example() {
                 </a>
               ))}
             </div>
-            <a
+            <Link
               href="#"
               className="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               <PlusSmallIcon aria-hidden="true" className="-ml-1.5 h-5 w-5" />
               New invoice
-            </a>
+            </Link>
           </div>
         </header>
 
@@ -289,6 +279,7 @@ export default function Example() {
                                     </div>
                                     <div
                                       className={classNames(
+                                        //@ts-ignore
                                         statuses[transaction.status],
                                         "rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset"
                                       )}
@@ -431,6 +422,7 @@ export default function Example() {
                         </div>
                         <div
                           className={classNames(
+                            //@ts-ignore
                             statuses[client.lastInvoice.status],
                             "rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset"
                           )}
