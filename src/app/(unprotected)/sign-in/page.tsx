@@ -1,19 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 
-export default function SIgnIn() {
+export default function SignIn() {
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <div className="flex h-16 shrink-0 items-center gap-4">
-          <Image alt="Your Company" src="/ascent.png" height={40} width={40} />
-          <span className="font-bold">Ascent Bank</span>
-        </div>
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
           Sign in to your account
         </h2>
       </div>
-
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form action="#" method="POST" className="space-y-6">
           <div>
@@ -44,12 +38,12 @@ export default function SIgnIn() {
                 Password
               </label>
               <div className="text-sm">
-                <a
+                <Link
                   href="#"
                   className="font-semibold text-indigo-600 hover:text-indigo-500"
                 >
                   Forgot password?
-                </a>
+                </Link>
               </div>
             </div>
             <div className="mt-2">
@@ -75,12 +69,12 @@ export default function SIgnIn() {
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{" "}
+          Not Enrolled?{" "}
           <Link
-            href="#"
+            href="/sign-up"
             className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
           >
-            Start a 14 day free trial
+            Sign Up Now.
           </Link>
         </p>
       </div>

@@ -56,7 +56,7 @@ const navigation = [
 
 const userNavigation = [
   { name: "Your profile", href: "/profile" },
-  { name: "Sign out", href: "#" },
+  { name: "Sign out", href: "/" },
 ];
 
 function classNames(...classes: string[]) {
@@ -107,6 +107,8 @@ export default function RootLayout({
                 <Image
                   alt="Your Company"
                   src="/ascent.png"
+                  height={32}
+                  width={32}
                   className="h-8 w-auto"
                 />
                 <span className="font-bold text-white">Ascent Bank</span>
@@ -138,7 +140,7 @@ export default function RootLayout({
                   </li>
                   <li className="mt-auto">
                     <Link
-                      href="#"
+                      href="/settings"
                       className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
                     >
                       <Cog6ToothIcon
@@ -193,7 +195,7 @@ export default function RootLayout({
               </li>
               <li className="mt-auto">
                 <Link
-                  href="#"
+                  href="/settings"
                   className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-400 hover:bg-gray-800 hover:text-white"
                 >
                   <Cog6ToothIcon
